@@ -5,11 +5,11 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func GetRoutes(server *echo.Echo) echo.Echo {
-	server.Group("/api")
-	{
-		server.GET("/users", handlers.GetUsers)
-	}
+func GetRoutes(server *echo.Echo) *echo.Echo {
 
-	return *server
+	apiGroup := server.Group("/api")
+
+	apiGroup.GET("/users", handlers.GetUsers)
+
+	return server
 }
