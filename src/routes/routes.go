@@ -10,6 +10,7 @@ func GetRoutes(server *echo.Echo) *echo.Echo {
 	apiGroup := server.Group("/api")
 
 	apiGroup.GET("/users", handlers.GetUsers)
+	apiGroup.POST("/users", handlers.CreateUser)
 
 	return server
 }
